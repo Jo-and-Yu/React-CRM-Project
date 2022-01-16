@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Layout = () => {
+const Dashboard = () => {
     return (
         <div>
-            Hello Layout
+            Dashboard
         </div>
     )
 }
 
-export default Layout
+export default Dashboard
