@@ -2,6 +2,7 @@ import React from 'react'
 import Sidebar from '../sidebar/Sidebar'
 import Routess from '../Routess'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
+import './layout.css'
 
 
 const Layout = () => {
