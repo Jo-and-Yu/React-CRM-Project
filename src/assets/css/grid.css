@@ -1,4 +1,4 @@
-/* .row {
+.row {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -15px;
@@ -54,11 +54,11 @@
 
 .col-12 {
   width: 100%;
-} */
+}
 
 /* MEDIUM SCREEN */
 
-/* @media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1280px) {
   .col-md-1 {
     width: 8.33%;
   }
@@ -106,11 +106,11 @@
   .col-md-12 {
     width: 100%;
   }
-} */
+}
 
 /* SMALL SCREEN */
 
-/* @media only screen and (max-width: 500px) {
+@media only screen and (max-width: 500px) {
   .col-sm-1 {
     width: 8.33%;
   }
@@ -158,4 +158,4 @@
   .col-sm-12 {
     width: 100%;
   }
-} */
+}

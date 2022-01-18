@@ -83,7 +83,7 @@ input:focus {
   border: 2px solid var(--main-color);
 }
 
-/* .page-header {
+.page-header {
   margin-bottom: 40px;
   text-transform: capitalize;
 }
@@ -104,7 +104,7 @@ input:focus {
   height: calc(100% - 30px);
 }
 
-.card__header {
+/* .card__header {
   text-transform: capitalize;
 }
 
