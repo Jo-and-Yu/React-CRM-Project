@@ -104,7 +104,7 @@ input:focus {
   height: calc(100% - 30px);
 }
 
-/* .card__header {
+.card__header {
   text-transform: capitalize;
 }
 
@@ -117,7 +117,7 @@ input:focus {
   text-transform: capitalize;
 }
 
-.light-background {
+/* .light-background {
   background-color: var(--main-bg-light);
   color: #000;
 }
