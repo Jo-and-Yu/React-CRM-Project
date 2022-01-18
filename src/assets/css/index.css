@@ -8,7 +8,7 @@
   --main-color: #1b5977;
   --second-color: #558196;
   --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  /*
+  
   --main-bg-light: #ffffff;
   --second-bg-light: #fafafb;
   --txt-color-light: #455560;
@@ -32,7 +32,7 @@
   --second-color-green: #4caf50;
 
   --main-color-orange: #d68102;
-  --second-color-orange: #fca11a; */
+  --second-color-orange: #fca11a; 
 
   --sidebar-width: 300px;
   --border-radius: 15px;
