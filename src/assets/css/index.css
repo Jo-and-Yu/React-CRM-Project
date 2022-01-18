@@ -83,7 +83,7 @@ input:focus {
   border: 2px solid var(--main-color);
 }
 
-/* .page-header {
+.page-header {
   margin-bottom: 40px;
   text-transform: capitalize;
 }
@@ -117,7 +117,7 @@ input:focus {
   text-transform: capitalize;
 }
 
-.light-background {
+/* .light-background {
   background-color: var(--main-bg-light);
   color: #000;
 }
