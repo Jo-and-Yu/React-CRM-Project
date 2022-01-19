@@ -1,4 +1,4 @@
-/* .theme-mode-light {
+.theme-mode-light {
   --main-bg: var(--main-bg-light);
   --second-bg: var(--second-bg-light);
   --txt-color: var(--txt-color-light);
@@ -35,4 +35,4 @@
 .theme-color-orange {
   --main-color: var(--main-color-orange);
   --second-color: var(--second-color-orange);
-} */
+}

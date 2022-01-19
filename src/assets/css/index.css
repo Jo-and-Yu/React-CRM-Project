@@ -8,7 +8,7 @@
   --main-color: #1b5977;
   --second-color: #558196;
   --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  
+
   --main-bg-light: #ffffff;
   --second-bg-light: #fafafb;
   --txt-color-light: #455560;
@@ -19,8 +19,8 @@
   --txt-color-dark: #bbbbbb;
   --box-shadow-dark: rgba(0, 0, 0, 0.2) 0px 5px 10px;
 
-  --main-color-blue: #349eff;
-  --second-color-blue: #62b4ff;
+  --main-color-blue: #1b5977;
+  --second-color-blue: #558196;
 
   --main-color-red: #fb0b12;
   --second-color-red: #ff4a6b;
@@ -32,7 +32,7 @@
   --second-color-green: #4caf50;
 
   --main-color-orange: #d68102;
-  --second-color-orange: #fca11a; 
+  --second-color-orange: #fca11a;
 
   --sidebar-width: 300px;
   --border-radius: 15px;
@@ -117,7 +117,7 @@ input:focus {
   text-transform: capitalize;
 }
 
-/* .light-background {
+.light-background {
   background-color: var(--main-bg-light);
   color: #000;
 }
@@ -150,4 +150,4 @@ input:focus {
 .orange-color {
   background-color: var(--main-color-orange);
   color: #fff;
-} */
+}

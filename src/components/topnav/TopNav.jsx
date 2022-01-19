@@ -5,6 +5,8 @@ import './topnav.css'
 
 import Dropdown from '../dropdown/Dropdown'
 
+import ThemeMenu from '../thememenu/ThemeMenu' 
+
 import notifications from '../../assets/JsonData/notification.json'
 
 import user_image from '../../assets/images/joyu_ceo.png'
@@ -69,8 +71,7 @@ const TopNav = () => {
                     {/* dropdown here */}
                 </div>
                 <div className="topnav__right-item">
-                    {/* theme setting */}
-                    <Dropdown/>
+                    <ThemeMenu />
                 </div>
             </div>
         </div>
