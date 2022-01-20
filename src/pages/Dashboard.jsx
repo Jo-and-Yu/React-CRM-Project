@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { Link } from 'react-router-dom' 
 
 import Chart from 'react-apexcharts'
+
+import { useSelector, useDispatch } from 'react-redux'
 
 import statusCards from '../assets/JsonData/status-card-data.json'
 
@@ -12,6 +14,7 @@ import Badge from '../components/badge/Badge'
 
 import StatusCard from '../components/status-card/StatusCard'
 
+import ThemeAction from '../redux/actions/ThemeAction'
 
 
 const chartOptions = {
@@ -152,7 +155,7 @@ const renderOrderHead = (item, index) => (
 )
 
 const renderOrderBody = (item, index) => (
-    <tr>
+    <tr key={index}>
         <td>{item.id}</td>
         <td>{item.user}</td>
         <td>{item.price}</td>
@@ -164,6 +167,15 @@ const renderOrderBody = (item, index) => (
 )
 
 const Dashboard = () => {
+
+    const themeReducer = useSelector(state => state.ThemeReducer.mode)
+
+    // const dispatch = useDispatch()
+
+    // useEffect(() => {
+    //     dispatch(ThemeAction.getTheme())
+    // })
+
     return (
         <div>
             <h2 className='page-header'>Dashboard</h2>
@@ -172,7 +184,7 @@ const Dashboard = () => {
                     <div className='row'>
                         {
                             statusCards.map((item, index) => (
-                                <div className='col-6'>
+                                <div className='col-6' key={index}>
                                     <StatusCard
                                         icon={item.icon}
                                         count={item.count}
@@ -187,7 +199,13 @@ const Dashboard = () => {
                     <div className='card full-height'>
                         {/* {chart} */}
                         <Chart
-                            options={chartOptions.options}
+                            options={themeReducer === 'theme-mode-dark' ? {
+                                ...chartOptions.options,
+                                theme : { mode: 'dark' }
+                            } : {
+                                ...chartOptions.options,
+                                theme : { mode: 'light' }
+                            }}
                             series={chartOptions.series}
                             type='line'
                             height='100%'
