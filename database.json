@@ -1,0 +1,7 @@
+{
+    "host": "crm-project.c5a3q7cgq2yp.us-east-2.rds.amazonaws.com",
+    "user": "user",
+    "password": "12345678",
+    "port": "3306",
+    "database": "crm"
+}
