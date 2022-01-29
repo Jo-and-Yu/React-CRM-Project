@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
 import Table from '../components/table/Table'
+import CustomerAdd from './CustomerAdd'
+// import CustomerDelete from './CustomerDelete'
 
 //import customerList from '../assets/JsonData/customers-list.json'
 
@@ -23,11 +25,19 @@ const renderBody = (item, index) => (
         <td>{item.개인전화번호}</td>
         <td>{item.부모님전화번호}</td>
         <td>{item.등록일자}</td>
+        {/* <td><CustomerDelete stateRefresh={item.stateRefresh} id={item.id}/></td> */}
     </tr>
 )
 
 const Customers = () => {
     const [customerList, setCustomerList] = useState([])
+
+    const stateRefresh = () => {
+        setCustomerList([]);
+        callApi()
+        .then(data => setCustomerList(data))
+        .catch(err => console.log(err));
+      }
 
     async function callApi() {
         const response = await fetch('/customer');
@@ -59,6 +69,7 @@ const Customers = () => {
                         </div>
                     </div>
                 </div>
+                <CustomerAdd stateRefresh={stateRefresh}/>
             </div>
         </div>
     )
