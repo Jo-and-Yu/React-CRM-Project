@@ -53,7 +53,7 @@ const Customers = () => {
                                 limit='10'
                                 headData={customerTableHead}
                                 renderHead={(item, index) => renderHead(item, index)}
-                                bodyData={[{"id":1,"이름":"유연아","생년월일":"19981127","학교":"사우고","학년":"2","개인전화번호":"01089732612","부모님전화번호":"01080734524","주소":"사우동할리스","등록일자":"20220910","학생구분":"재학중","특이사항":null}]}
+                                bodyData={customerList}
                                 renderBody={(item, index) => renderBody(item, index)}
                             />
                         </div>
