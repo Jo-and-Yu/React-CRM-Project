@@ -16,7 +16,6 @@ import StatusCard from '../components/status-card/StatusCard'
 
 import ThemeAction from '../redux/actions/ThemeAction'
 
-
 const chartOptions = {
     series: [{
         name: 'Online Customer',
