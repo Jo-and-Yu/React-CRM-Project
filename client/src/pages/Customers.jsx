@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import Table from '../components/table/Table'
 import CustomerAdd from './CustomerAdd'
-// import CustomerDelete from './CustomerDelete'
+import CustomerDelete from './CustomerDelete'
 
 //import customerList from '../assets/JsonData/customers-list.json'
 
@@ -17,20 +17,22 @@ const customerTableHead = [
 
 const renderHead = (item, index) => <th key={index}>{item}</th>
 
-const renderBody = (item, index) => (
-    <tr key={index}>
-        <td>{item.id}</td>
-        <td>{item.이름}</td>
-        <td>{item.학년}</td>
-        <td>{item.개인전화번호}</td>
-        <td>{item.부모님전화번호}</td>
-        <td>{item.등록일자}</td>
-        {/* <td><CustomerDelete stateRefresh={item.stateRefresh} id={item.id}/></td> */}
-    </tr>
-)
+
 
 const Customers = () => {
     const [customerList, setCustomerList] = useState([])
+
+    const renderBody = (item, index) => (
+        <tr key={index}>
+            <td>{item.id}</td>
+            <td>{item.이름}</td>
+            <td>{item.학년}</td>
+            <td>{item.개인전화번호}</td>
+            <td>{item.부모님전화번호}</td>
+            <td>{item.등록일자}</td>
+            <td><CustomerDelete stateRefresh={stateRefresh}  id={item.id}/></td>
+        </tr>
+    )
 
     const stateRefresh = () => {
         setCustomerList([]);
@@ -65,6 +67,7 @@ const Customers = () => {
                                 renderHead={(item, index) => renderHead(item, index)}
                                 bodyData={customerList}
                                 renderBody={(item, index) => renderBody(item, index)}
+                                stateRefresh={stateRefresh}
                             />
                         </div>
                     </div>

@@ -7,7 +7,7 @@ const mysql =require('mysql');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5002;
 const data = fs.readFileSync('./database.json');
 const conf = JSON.parse(data);
 
@@ -23,7 +23,7 @@ connection.connect();
 
 app.get('/customer', (req, res) => {
     connection.query(
-        "select * from customer",
+        "SELECT * FROM customer where isDeleted = 0",
         (err, rows, fields) => {
             res.send(rows);
         }
@@ -32,8 +32,6 @@ app.get('/customer', (req, res) => {
 
 app.post('/customer', (req,res) => {
     let sql = 'INSERT INTO customer VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now(), 0)';
-    console.log(req.body)
-    console.log(req.body.이름)
     let 이름 = req.body.이름;
     let 생년월일 = req.body.생년월일;
     let 학교 = req.body.학교;
@@ -56,11 +54,13 @@ app.post('/customer', (req,res) => {
 });
 
 app.delete('/customer/:id', (req, res)=> {
-    let sql = 'UPDATE CUSTOMER SET isDeleted = 1 WHERE id = ?';
+    let sql = 'UPDATE customer SET isDeleted = 1 WHERE id = ?';
     let params = [req.params.id];
+    console.log(params)
     connection.query(sql, params, 
          (err, rows, field) => {
-              res.send(rows);
+              res.send({message: '삭제되었습니다.'});
+              console.log(err);
          }
     )
 });
