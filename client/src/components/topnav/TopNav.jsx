@@ -52,6 +52,9 @@ const TopNav = () => {
                 <i className='bx bx-search'></i>
             </div>
             <div className="topnav__right">
+                 <div className="topnav__right-item">
+                    <button>Login</button>
+                </div>
                 <div className="topnav__right-item">
                     {/* dropdown here */}
                     <Dropdown
