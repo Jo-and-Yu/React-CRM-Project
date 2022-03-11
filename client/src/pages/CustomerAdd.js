@@ -102,7 +102,7 @@ const CustomerAdd = (props) => {
             <form onSubmit={handleFormSubmit}>
                 <h2>학생 추가</h2>
                 <div>
-                    이름: <input type="text" name="이름" vlaue={이름} onChange={(e) => { set이름(e.target.value) }}/><br/>
+                    이름: <input type="text" name="이름" value={이름} onChange={(e) => { set이름(e.target.value) }}/><br/>
                     생년월일: <input type="text" name="생년월일" value={생년월일} onChange={(e) => { set생년월일(e.target.value) }}/><br/>
                     학교: <input type="text" name="학교" value={학교} onChange={(e) => { set학교(e.target.value) }}/><br/>
                     학년: <input type="text" name="학년" value={학년} onChange={(e) => { set학년(e.target.value) }}/><br/>
