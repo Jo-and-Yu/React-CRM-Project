@@ -1,23 +1,24 @@
-const fs = require('fs');
-const express = require('express');
 
-const app = express();
+// 모듈
+
+const express = require('express');
+const dotenv = require('dotenv');
 const mysql =require('mysql');
 
+const app = express();
+
+// 앱 세팅
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
-const port = process.env.PORT || 5002;
-const data = fs.readFileSync('./database.json');
-const conf = JSON.parse(data);
 
+dotenv.config({path: '../.env', encoding: 'utf8'});
 
 const connection = mysql.createConnection({
-    host: conf.host,
-    user: conf.user,
-    password: conf.password,
-    port: conf.port,
-    database: conf.database
+    host: process.env.REACT_APP_DB_HOST,
+    user: process.env.REACT_APP_DB_USER,
+    password: process.env.REACT_APP_DB_PSWORD,
+    database: process.env.REACT_APP_DB_DATABASE,
 });
 connection.connect();
 
@@ -89,4 +90,4 @@ app.delete('/customer/:id', (req, res)=> {
     )
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`))
+module.exports = app;
