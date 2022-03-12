@@ -29,6 +29,30 @@ app.get('/customer', (req, res) => {
         }
     )
 })
+// 로그인, 회원가입 테스트용 api
+// app.post('/register', (req, res) => {
+//     let sql = 'INSERT INTO login VALUES (?, ?)';
+//     let id = req.body.username;
+//     let password = req.body.password;
+//     console.log(id,password)
+//     let params = [id, password]
+
+//     connection.query(sql, params,
+//         (err, rows, fields) => {
+//             res.send({message: 'Add success'});
+//             console.log(err);
+//         }    
+//     )
+// })
+
+// app.post('/login', (req, res) => {
+//     let id = req.body.username;
+//     let password = req.body.password;
+//     console.log(id,password)
+    
+// })
+
+
 
 app.post('/customer', (req,res) => {
     let sql = 'INSERT INTO customer VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now(), 0)';
