@@ -1,9 +1,7 @@
 
 // 모듈
-
 const express = require('express');
-const dotenv = require('dotenv');
-const mysql =require('mysql');
+const db = require('./src/config/db');
 
 const app = express();
 
@@ -11,19 +9,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
-
-dotenv.config({path: '../.env', encoding: 'utf8'});
-
-const connection = mysql.createConnection({
-    host: process.env.REACT_APP_DB_HOST,
-    user: process.env.REACT_APP_DB_USER,
-    password: process.env.REACT_APP_DB_PSWORD,
-    database: process.env.REACT_APP_DB_DATABASE,
-});
-connection.connect();
-
+// Router
 app.get('/customer', (req, res) => {
-    connection.query(
+    db.query(
         "SELECT * FROM customer where isDeleted = 0",
         (err, rows, fields) => {
             res.send(rows);
@@ -70,7 +58,7 @@ app.post('/customer', (req,res) => {
 
     let params = [이름, 생년월일, 학교, 학년, 개인전화번호, 부모님전화번호, 주소, 등록일자, 학생구분, 특이사항];
 
-    connection.query(sql, params,
+    db.query(sql, params,
          (err, rows, fields) => {
               res.send({message: 'Add success'});
               console.log(err);
@@ -82,7 +70,7 @@ app.delete('/customer/:id', (req, res)=> {
     let sql = 'UPDATE customer SET isDeleted = 1 WHERE id = ?';
     let params = [req.params.id];
     console.log(params)
-    connection.query(sql, params, 
+    db.query(sql, params, 
          (err, rows, field) => {
               res.send({message: '삭제되었습니다.'});
               console.log(err);
