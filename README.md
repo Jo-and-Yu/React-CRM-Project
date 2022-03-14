@@ -9,7 +9,8 @@ React를 이용한 고객관리프로그램
 ## 목표
 * CRUD
 * MVC
-* Login
+* Login & Register
+* RDS 연동
 
 ## 스크린샷
 <img width="1440" alt="스크린샷 2022-01-23 오후 7 09 11" src="https://user-images.githubusercontent.com/81620424/150673770-4ed2d673-3676-4938-95e9-147660aa4d77.png">
