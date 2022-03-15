@@ -13,11 +13,11 @@ const Login = () => {
 
     const login = () => {
         Axios.post('/login', {
-            username: username,
+            id: username,
             password: password
         })
         .then((res) => console.log(res.data.message))
-        .finally(() => stateRefresh())        
+        .then(() => stateRefresh())        
     }
     return (
         <div className='login'>

@@ -1,5 +1,6 @@
-const db = require('../../config/db');
 const Customer = require('../../models/Customer')
+const User = require('../../models/User');
+
 const crud = {
     customerShow: async (req, res) => {
         const customer = new Customer();
@@ -21,25 +22,18 @@ const crud = {
 };
 
 const login = {
-    register: (req, res) => {
-        let sql = 'INSERT INTO login VALUES (?, ?)';
-        let id = req.body.username;
-        let password = req.body.password;
-        console.log(id,password)
-        let params = [id, password]
-    
-        db.query(sql, params,
-            (err, rows, fields) => {
-                res.send({message: 'Add success'});
-                console.log(err);
-            }    
-        )
+    register: async (req, res) => {
+        const user = new User(req.body);
+        const response = await user.register();
+        console.log(response);
+
+        return res.json(response);
     },
-    login: (req, res) => {
-        let id = req.body.username;
-        let password = req.body.password;
-        console.log(id,password)
-        
+    login: async (req, res) => {
+        const user = new User(req.body);
+        const response = await user.login();
+
+        return res.json(response);
     }
 }
 
