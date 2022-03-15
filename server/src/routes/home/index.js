@@ -7,7 +7,7 @@ const ctrl = require('./home.ctrl');
 
 // Router
 // Customer crud
-router.get('/customer', ctrl.crud.customerList);
+router.get('/customer', ctrl.crud.customerShow);
 router.post('/customer', ctrl.crud.customerAdd);
 router.delete('/customer/:id',ctrl.crud.customerDelete);
 
