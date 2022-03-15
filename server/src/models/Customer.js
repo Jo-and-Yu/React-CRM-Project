@@ -13,9 +13,6 @@ class Customer {
         }
     }
 
-
-
-
     async CustomerAdd() {
         const customer = this.body;
         try {

@@ -14,7 +14,7 @@ const Register = () => {
 
     const register = () => {
         Axios.post('/register', {
-            username: usernameReg,
+            id: usernameReg,
             password: passwordReg
         })
         .then((res) => console.log(res.data.message))
