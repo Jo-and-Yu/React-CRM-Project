@@ -10,7 +10,7 @@ function CustomerDelete(props){
             method: 'DELETE'
         })
         .then(res => res.json())
-        .then(data => console.log(data.message))
+        .then(data => console.log(data))
         .finally(() => props.stateRefresh())
         
         

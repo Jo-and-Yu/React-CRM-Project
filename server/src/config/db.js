@@ -1,6 +1,6 @@
 // 모듈
 const dotenv = require('dotenv');
-const mysql =require('mysql');
+const mysql = require('mysql');
 
 dotenv.config({path: '../.env', encoding: 'utf8'});
 
