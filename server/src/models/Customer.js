@@ -5,7 +5,6 @@ class Customer {
       this.body = body;
     }
     async CustomerShow() {
-        const customer = this.body;
         try {
             const response = await CustomerStorage.show();
             return response;

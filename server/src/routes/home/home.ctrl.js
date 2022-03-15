@@ -1,7 +1,8 @@
 const db = require('../../config/db');
 const Customer = require('../../models/Customer')
 const crud = {
-    customerShow: (req, res) => {
+    customerShow: async (req, res) => {
+        const customer = new Customer();
         const response = await customer.CustomerShow();
         return res.send(response)
     },
