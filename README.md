@@ -21,4 +21,4 @@ React를 이용한 고객관리프로그램
 * 고객 표
 <img width="1440" alt="스크린샷 2022-01-23 오후 7 09 36" src="https://user-images.githubusercontent.com/81620424/150673814-1263c3bd-7bf6-4c1a-ad06-97021f2f8ac1.png">
 
-* 모드 변경
+*  변경
