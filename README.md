@@ -1,8 +1,5 @@
 # React-CRM-Project
 
-## 노션 링크
-https://www.notion.so/JOYU-CRM-PROJECT-b73bcbb4a18e4dc5af6f2651295f3766
-
 ## 주제
 React를 이용한 고객관리프로그램 
 
